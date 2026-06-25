@@ -25,13 +25,13 @@ module slotMachine_tb();
         reset = 0;      // Put system into Reset
         coin_in = 0;
         test_seed = 8'h00;
-        #20;            // Wait 20 time units
+        #20;            
         
         // Spin Test 1: Seed '8'hA5'
         test_seed = 8'hA5; // Set first random starting seed
         reset = 0;         // Keep reset low momentarily to latch it
         #10;
-        reset = 1;         // System goes to IDLE state (00)
+        reset = 1;         // System goes to IDLE state
         #20;
 
         // Insert Coin for Spin 1
@@ -41,12 +41,12 @@ module slotMachine_tb();
         
         #1100; // Wait for Spin 1 sequence to finish completely
 
-        // Spin Test 2: Seed '8'h3C' 
+        // Spin Test 2: Seed '8'h2D' 
         #50;               // Let the system rest briefly in IDLE
-        test_seed = 8'h3C; // Set a completely different starting seed!
+        test_seed = 8'h2D; 
         reset = 0;        
         #20;
-        reset = 1;         // Release reset to let Reel A wake up holding 8'h3C
+        reset = 1;       
         #20;
 
         // Insert Coin for Spin 2
