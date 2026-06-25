@@ -4,10 +4,10 @@ Open sourced Slot Machine that I personally designed through thorough research a
 
 This project is a 2 month personal engineering project focusing on utilzing the skills I learned in Digital Logic, background + passion about CPUs and Computer Engineering, and a self-learning journey through designing and verifcations of a CPU.
 
-# The 2 Month Engineering Lifecycle
+## The 2 Month Engineering Lifecycle
 Week 1 & 2 - Research & Core Architecture: Learned about the functionability and architecture of a CPU + getting a Quartus license to write in Verilog.
 
-Week 3 & 4 - Drawing the Datapath and creating a Finite State Machine (FSM)
+* **Week 3 & 4 - Drawing the Datapath and creating a Finite State Machine (FSM)
 [Summer Personal Project - Slot Machine CPU.pdf](https://github.com/user-attachments/files/29329295/Summer.Personal.Project.-.Slot.Machine.CPU.pdf)
 
 Week 5 & 6 - Coding the CPU in Verilog: My teacher previously had generic building blocks that we can instantiate from, so being used to that I made my own generic building blocks and instantiated them and learned to build multiple modules and work up (Datapath and Control -> Slot Machine)
