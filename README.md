@@ -39,19 +39,19 @@ The timing correctness of this complete processor layout was thoroughly verified
 
 By writing a custom simulation testbench, I successfully executed a **dual-seed testing verification** by injecting two different hexadecimal values back-to-back across the simulation timeline:
 * **Spin 1 (Seed `8'hA5`):** Wakes up the system cleanly, shuffles the cascaded registers independently, and safely halts on reel values `7 6 5` (A clear loss).
-* **Spin 2 (Seed `8'h3C`):** Re-asserts reset and executes a second complete spin cycle. Since the pseudo-random LFSR sequence follows a strict, repeatable mathematical polynomial trajectory, the reels cycle perfectly and land back on **`7 6 5`**, proving that the digital hardware functions deterministically and predictably under identical starting conditions.
-<img width="2456" height="201" alt="slotMachine Timing Diagram" src="https://github.com/user-attachments/assets/de01daf0-5f42-4f36-acc4-909e3e3f144d" />
+* **Spin 2 (Seed `8'h3C`):** Resets the system, loads the new seed, and successfully halts the independent reels on `4 8 4`, immediately capturing the match and forcing the **`pairWin`** flag to lock high at `1`..
+<img width="2463" height="225" alt="slotMachine CPU Timing Diagram" src="https://github.com/user-attachments/assets/ea8d2eed-1348-4b4e-9aac-876a85afab15" />
 
 ## How to Set-up & Run
 You can easily execute this complete project file in an open-source simulator:
 
 1. Open a workspace on [EDA Playground](https://edaplayground.com).
 2. Change the left sidebar language dropdown to **SystemVerilog/Verilog**.
-3. Under **Tools & Simulators**, select **`Icarus Verilog`**.
+3. Under **Tools & Simulators**, select **`Icarus Verilog 12.0`**.
 4. Check the box labeled **`Open EPWave after run`** to generate the timing graphs.
 5. Place the testbench code inside the `testbench.sv` tab and the hardware modules inside the `design.sv` tab.
 6. Click the blue **Run** button at the top.
-7. Go to **Generate Signals** on the top left and click on **slotMachine.tb** and select all of the signals.
+7. Go to **Generate Signals** on the top left and click on **slotMachine.tb** and append all of the signals.
 
 ## Engineering Skills learned
 * **Hardware Design:** Learned how to write Verilog code, route digital wires, and organize hardware modules.
