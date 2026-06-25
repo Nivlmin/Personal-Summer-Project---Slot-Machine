@@ -60,4 +60,4 @@ You can easily execute this complete project file in an open-source simulator:
 * **Simulation and Debugging:** Built testbenches to generate clocks, simulated player inputs, and used timing waveforms to analyze each detail verifying outcomes are correct, and discovering and fixing bugs.
 
 ## Closure + What's Next
-Sticking with this project over the summer transformed abstract digital concepts into a deeply rewarding design experience. Overcoming these hardware limitations and debugging behavioral loops has solidified my foundational skills and provided the perfect springboard for my next major computer engineering milestone: designing a functional single-cycle **RISC-V CPU**.
+Sticking with this project over the summer transformed abstract digital concepts into a deeply rewarding design experience. Overcoming these hardware limitations and debugging behavioral loops has solidified my foundational skills and provided the perfect springboard for my next major ECE milestone: designing a functional single-cycle **RISC-V CPU**.
