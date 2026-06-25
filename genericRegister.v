@@ -18,5 +18,4 @@ module genericRegister(D, clk, reset, C, Q);
 			end
 	end
 	
-	endmodule
-	
+endmodule
