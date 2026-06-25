@@ -39,7 +39,7 @@ The timing correctness of this complete processor layout was thoroughly verified
 
 By writing a custom simulation testbench, I successfully executed a **dual-seed testing verification** by injecting two different hexadecimal values back-to-back across the simulation timeline:
 * **Spin 1 (Seed `8'hA5`):** Wakes up the system cleanly, shuffles the cascaded registers independently, and safely halts on reel values `7 6 5` (A clear loss).
-* **Spin 2 (Seed `8'h3C`):** Resets the system, loads the new seed, and successfully halts the independent reels on `4 8 4`, immediately capturing the match and forcing the **`pairWin`** flag to lock high at `1`..
+* **Spin 2 (Seed `8'h3C`):** Resets the system, loads the new seed, and successfully halts the independent reels on `4 8 4`, immediately capturing the match and forcing the **`pairWin`** flag to lock high at `1`.
 <img width="2463" height="225" alt="slotMachine CPU Timing Diagram" src="https://github.com/user-attachments/assets/ea8d2eed-1348-4b4e-9aac-876a85afab15" />
 
 ## How to Set-up & Run
