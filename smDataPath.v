@@ -44,7 +44,7 @@ module smDataPath (clk, reset, coin_in, clearGame, spinA, spinB, spinC, gameStar
 	end
 	
 	// Three Reel Hex
-	genericRegister #(8) reelRegA(lfsr_bus, clk, reset, spinA, reelA_out);
+	genericRegister #(8) reelRegA(mux_lfsr, clk, reset, spinA, reelA_out);
 	genericRegister #(8) reelRegB(reelA_out, clk, reset, spinB, reelB_out);
 	genericRegister #(8) reelRegC(reelB_out, clk, reset, spinC, reelC_out);
 	
