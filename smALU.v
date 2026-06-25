@@ -6,9 +6,10 @@ module smALU (reelA, reelB, reelC, jackpot, pairWin);
 	wire eqAB, eqBC, eqAC;
 	
 	// Instantiate comparators
-	genericComparator #(8) ABcomp(reelA, reelB, , ,eqAB);
-	genericComparator #(8) BCcomp(reelB, reelC, , ,eqBC);
-	genericComparator #(8) ACcomp(reelA, reelC, , ,eqAC);
+	// Had to incoporate bus truncation to work around the 8 bit LFSR/ALU with the 4 bit hexToSevenSeg
+	genericComparator #(4) ABcomp(reelA[3:0], reelB[3:0], , ,eqAB);
+	genericComparator #(4) BCcomp(reelB[3:0], reelC[3:0], , ,eqBC);
+	genericComparator #(4) ACcomp(reelA[3:0], reelC[3:0], , ,eqAC);
 	
 	always @(*)
 		begin
