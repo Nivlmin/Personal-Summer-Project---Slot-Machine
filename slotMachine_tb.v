@@ -22,7 +22,7 @@ module slotMachine_tb();
 
         // Initial State & Reset
         clk = 0;
-        reset = 0;      // Put system into Reset
+        reset = 0;   
         coin_in = 0;
         test_seed = 8'h00;
         #20;            
