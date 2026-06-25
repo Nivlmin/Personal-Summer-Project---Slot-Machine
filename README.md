@@ -39,7 +39,7 @@ The timing correctness of this complete processor layout was thoroughly verified
 
 By writing a custom simulation testbench, I successfully executed a **dual-seed testing verification** by injecting two different hexadecimal values back-to-back across the simulation timeline:
 * **Spin 1 (Seed `8'hA5`):** Wakes up the system cleanly, shuffles the cascaded registers independently, and safely halts on reel values `7 6 5` (A clear loss).
-* **Spin 2 (Seed `8'h3C`):** Resets the system, shifts the mathematical execution sector, and successfully halts the independent reels on `4 8 4`, immediately capturing the match and forcing the **`pairWin`** flag to spike and lock high at `1`.
+* **Spin 2 (Seed `8'h3C`):** Re-asserts reset and executes a second complete spin cycle. Since the pseudo-random LFSR sequence follows a strict, repeatable mathematical polynomial trajectory, the reels cycle perfectly and land back on **`7 6 5`**, proving that the digital hardware functions deterministically and predictably under identical starting conditions.
 <img width="2456" height="201" alt="slotMachine Timing Diagram" src="https://github.com/user-attachments/assets/de01daf0-5f42-4f36-acc4-909e3e3f144d" />
 
 ## How to Set-up & Run
