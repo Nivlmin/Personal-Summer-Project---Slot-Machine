@@ -23,7 +23,7 @@ Bug: 8-bit lines routed to 4-bit displays only showing the lower 4 bits. A scena
 Solution (Bus Truncatiion): I solved this by implementing intentional bus truncation at the module interfaces. The core registers continue to run at full 8-bit complexity. However, right at the inputs of the `hexToSevenSeg` decoders and the `smALU` comparators, the buses are sliced down to the lower nibble `[3:0]`. This guarantees that what the player physically sees on the board is 100% identical to what the internal arithmetic logic calculates.
 
 ### 2. The LFSR Zero-Seed Trap
-Problem: Upon system reset, hardware registers clear their internal memory states to `0` (`8'h00`). Because an LFSR operates on XOR gate parity feedback loops, a starting seed of all zeros results in `0 ^ 0 = 0`, permanently trapping the random number generator in a frozen loop.
+Problem: Upon system reset, hardware registers clear their internal memory states to `0` (`8'h00`). Because an LFSR operates on an XOR gate feedback loop, a starting seed of all zeros results in `0 ^ 0 = 0`, permanently trapping the random number generator in a frozen loop.
 
 Solution (Seed Latch through a Mux): I designed a combinational bypass loop directly inside the top datapath:
   ```verilog
